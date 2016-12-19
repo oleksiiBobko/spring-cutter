@@ -1,7 +1,7 @@
 /**
  * 
  */
-package x.y.lambda;
+package x.y.z.api;
 
 /**
  * @author OBobko
