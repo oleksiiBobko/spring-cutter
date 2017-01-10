@@ -8,5 +8,5 @@ package x.y.z.api;
  * @date 2016-12-19
  */
 public interface Quoter {
-	public void sayQuote();
+    public void sayQuote();
 }

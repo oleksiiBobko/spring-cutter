@@ -18,26 +18,26 @@ import x.y.z.annotation.InjectRandomInt;
  */
 public class InjectRundomIntAnnotationPostProcessor implements BeanPostProcessor {
 
-	@Override
-	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		Field[] fields = bean.getClass().getDeclaredFields();
-		for(Field field : fields) {
-			InjectRandomInt annotation = field.getAnnotation(InjectRandomInt.class);
-			if(annotation != null) {
-				int min = annotation.min(); 
-				int max = annotation.max();
-				Random random = new Random();
-				int i =  min + random.nextInt(max);
-				field.setAccessible(true);
-				ReflectionUtils.setField(field, bean, i);
-			}
-		}
-		return bean;
-	}
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        Field[] fields = bean.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            InjectRandomInt annotation = field.getAnnotation(InjectRandomInt.class);
+            if (annotation != null) {
+                int min = annotation.min();
+                int max = annotation.max();
+                Random random = new Random();
+                int i = min + random.nextInt(max);
+                field.setAccessible(true);
+                ReflectionUtils.setField(field, bean, i);
+            }
+        }
+        return bean;
+    }
 
-	@Override
-	public Object postProcessBeforeInitialization(Object bean, String baneName) throws BeansException {
-		return bean;
-	}
-	
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String baneName) throws BeansException {
+        return bean;
+    }
+
 }

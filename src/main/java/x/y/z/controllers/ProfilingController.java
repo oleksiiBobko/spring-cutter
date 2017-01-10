@@ -8,14 +8,14 @@ package x.y.z.controllers;
  * @date 2016-12-19
  */
 public class ProfilingController implements ProfilingControllerMBean {
-	private boolean enabled;
+    private boolean enabled;
 
-	public boolean isEnabled() {
-		return enabled;
-	}
+    public boolean isEnabled() {
+        return enabled;
+    }
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-	
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
 }
